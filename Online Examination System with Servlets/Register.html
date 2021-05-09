@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Register</title>
+		<style>
+				body {font-family: verdana;} 
+		</style>
+	</head>
+	<body>
+		<h1>Online Exam System</h1>
+		<h2>Registration</h2>
+		<form action="handler" method="post">
+
+			<label for="username">Username : </label>
+			<input type="text" name="username" onkeyup="load(this.value)">
+			<div id="validity"></div>
+
+			<br><br>
+			<label for="password">Password : </label>
+			<input type="text" name="password" ><br>
+
+            <label for="cd">Enter mark in Compiler Design : </label>
+			<input type="text" name="cd" ><br>
+            <label for="ml">Enter mark in ML : </label>
+			<input type="text" name="ml" ><br>
+            <label for="ooad">Enter mark in OOAD : </label>
+			<input type="text" name="ooad" ><br>
+            <label for="fds">Enter mark in FDS : </label>
+			<input type="text" name="fds"><br>
+            
+			<br><br>
+			<input type="submit" value = "Register">
+			
+		</form>
+		
+		<script>
+		function load(a) {
+		//alert(a);
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() 
+		{
+		    if (this.readyState == 4 && this.status == 200) 
+		    {
+		      	if(this.responseText == "exists")
+		      	{
+					document.getElementById("validity").innerHTML="Username unavailable";
+					document.getElementById("validity").style.color = "red";
+			    }
+			    else
+			    {
+					document.getElementById("validity").innerHTML="Username available";
+					document.getElementById("validity").style.color = "green";
+			    }
+			  	if(a=="")
+			  	{
+			  		document.getElementById("validation").innerHTML="";
+			  	}
+		    }
+		};
+		xhttp.open("GET", "handler?username="+a, true);
+		xhttp.send();
+		}
+		</script>
+	</body>
+</html>
