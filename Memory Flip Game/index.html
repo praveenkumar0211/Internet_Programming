@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Memory Game</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div style="left:42%;width=100%;position:relative;padding:15px;"><h1>Level <span id="level">1</span></h1></div>
+  <section class="memory-game">
+    <div class="memory-card" data-framework="image_1">
+      <img class="front-face" src="img/1.jpg"  />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+    <div class="memory-card" data-framework="image_1">
+      <img class="front-face" src="img/1.jpg" />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+
+    <div class="memory-card" data-framework="image_2">
+      <img class="front-face" src="img/2.jfif"  />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+    <div class="memory-card" data-framework="image_2">
+      <img class="front-face" src="img/2.jfif"  />
+      <img class="back-face" src="img/badge.svg" />
+    </div>
+
+    <div class="memory-card" data-framework="image_3">
+      <img class="front-face" src="img/3.jfif"  />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+    <div class="memory-card" data-framework="image_3">
+      <img class="front-face" src="img/3.jfif"  />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+
+    <div class="memory-card" data-framework="image_4">
+      <img class="front-face" src="img/4.jfif"  />
+      <img class="back-face" src="img/badge.svg" />
+    </div>
+    <div class="memory-card" data-framework="image_4">
+      <img class="front-face" src="img/4.jfif"  />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+
+    <div class="memory-card" data-framework="image_5">
+      <img class="front-face" src="img/5.jfif" />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+    <div class="memory-card" data-framework="image_5">
+      <img class="front-face" src="img/5.jfif"  />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+
+    <div class="memory-card" data-framework="image_6">
+      <img class="front-face" src="img/6.jfif"  />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+    <div class="memory-card" data-framework="image_6">
+      <img class="front-face" src="img/6.jfif" />
+      <img class="back-face" src="img/badge.svg"  />
+    </div>
+  </section>
+  <section class="sec2">
+  <div id="app"></div>
+  <div id="score"></div>
+  </br></br>
+  <button onclick="startTimer();" id="start">Start Level</button>
+  </br></br>
+  <div style="display:none;" id="alert"><h2>Time up</h2></div>
+  </br>
+  <div style="display:none;" id="pass"><h2>Level Passed!!!</h2></div>
+  </br>
+  <div style="display:none;" id="fail"><h2>Play again!!</h2></div>
+  </br></br>
+  <button onclick="window.location.reload();" id="restart" style="display:none;" >Restart</button>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
