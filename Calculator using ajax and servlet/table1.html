@@ -1,0 +1,50 @@
+<html>
+<head>
+
+</head>
+<body>
+    
+
+
+<form method="get" action='calculator'>
+ Enter first number:
+ <input type="text" name="num1"><br><br>
+
+ Enter second number:
+ <input type="text" name="num2"><br><br>
+Operator:
+ <select name="op">
+ <option value="Add">Add</option>
+ <option value="Subtract">Subtract</option>
+ <option value="Multiply">Multiply</option>
+ <option value="Divide">Divide</option>
+ <option value="Modulus">Modulus</option>
+ <option value="Power">Power</option>
+ </select><br><br>
+ <div>
+ <input type="button" id="cal"  value="calculate" onclick="calc(num1.value,num2.value,op.value)">
+ </div>
+ </form>
+
+<div id="result"> </div>
+<script>
+  
+    function calc(num1,num2,op){
+
+      var xmlhttp = new XMLHttpRequest();
+      console.log(xmlhttp);
+      
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("result").innerHTML = "Answer: "+this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "calculator?num1="+num1+"&num2="+num2+"&op="+op, true);
+    xmlhttp.send();
+        }
+
+  </script>
+
+
+</body>
+</html>

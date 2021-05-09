@@ -1,0 +1,12 @@
+<web-app>
+
+<servlet>
+      <servlet-name>CalcServlet</servlet-name>
+      <servlet-class>CalcServlet.CalcServ</servlet-class>
+ </servlet>
+ 
+<servlet-mapping>
+      <servlet-name>CalcServlet</servlet-name>
+      <url-pattern>/calculator</url-pattern>
+</servlet-mapping>
+</web-app>
